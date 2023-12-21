@@ -60,11 +60,21 @@ If you take a look at the dataet used for finetuning, you can see that each prom
 }
 ```
 
-In order to parse this into a dataset format with each prompt and response I have used the notebooks for [train](https://github.com/mkthoma/llm_finetuning/blob/main/Data%20Prep/OpenAssistant%20Finetuning%20Training%20Data%20Prep.ipynb) and [validation](https://github.com/mkthoma/llm_finetuning/blob/main/Data%20Prep/OpenAssistant%20Finetuning%20Validation%20Data%20Prep%20(1).ipynb) dataset respectively. The parsed dataset is used for finetuning the model.
+In order to parse this into a dataset format with each prompt and response I have used the notebooks for [train](https://github.com/mkthoma/llm_finetuning/blob/main/Data%20Prep/OpenAssistant%20Finetuning%20Training%20Data%20Prep.ipynb) and [validation](https://github.com/mkthoma/llm_finetuning/blob/main/Data%20Prep/OpenAssistant%20Finetuning%20Validation%20Data%20Prep.ipynb) dataset respectively. The parsed dataset is used for finetuning the model.
 
 ## Finetuning the model
 The different parameters for the model are defined in the hyperparameters section of the notebook. The dataset is read, and the instructions for the user and system prompt are added, and then passed to the trainer for the model to be finetuned. 
 
 The finetuned model is then saved, merged with the base model of Phi2 and then saved to the Google Drive storage. We are then able to load the model and then make inferences based on the prompts provided and the maximum token length. 
 
-I have used a A100 instance for 1 epoch of finetuning which took about 4 hours to finish.
+I have used a A100 Colab instance for 1 epoch of finetuning which took about 4 hours to finish.
+
+## Training Logs
+
+![image](https://github.com/mkthoma/llm_finetuning/assets/135134412/d6cca038-62b6-412f-b42c-a118a0489184)
+
+## Sample Inferences
+
+![image](https://github.com/mkthoma/llm_finetuning/assets/135134412/64b0babf-aaf8-4999-a966-6ac02d8bb339)
+
+![image](https://github.com/mkthoma/llm_finetuning/assets/135134412/ede8846b-256d-410f-9274-5146729dd147)
